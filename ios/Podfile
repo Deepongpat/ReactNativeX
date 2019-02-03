@@ -32,6 +32,8 @@ target 'ReactNativeX' do
 
  
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 end
 
 target 'ReactNativeX-tvOS' do

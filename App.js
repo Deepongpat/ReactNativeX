@@ -7,7 +7,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 
 //
 import LoginTemplate from './src/templates/LoginTemplate/LoginTemplate'
-
+import ChatTemplate from './src/templates/ChatTemplate/ChatTemplate'
 
 
 type Props = {};
@@ -18,7 +18,8 @@ export default class App extends Component<Props> {
         <View style={{ flex: 1 }}>
           <Router>
             <Scene key="root">
-              <Scene key="login" component={LoginTemplate} hideNavBar initial />
+              <Scene key="login" component={LoginTemplate}   />
+              <Scene key="chat" component={ChatTemplate}  initial />
             </Scene>
           </Router>
         </View>

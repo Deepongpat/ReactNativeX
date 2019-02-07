@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 
-import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
+import {GiftedChat, Actions, Bubble, SystemMessage , InputToolbar , Composer} from 'react-native-gifted-chat';
 import CustomActions from './../ChatTemplate/CustomAction';
 import CustomView from './../ChatTemplate/CustomView';
 
@@ -28,6 +28,9 @@ export default class Example extends React.Component {
     this.renderSystemMessage = this.renderSystemMessage.bind(this);
     this.renderFooter = this.renderFooter.bind(this);
     this.onLoadEarlier = this.onLoadEarlier.bind(this);
+
+    this.renderComposer = this.renderComposer.bind(this);
+    this.renderInputToolbar = this.renderInputToolbar.bind(this);
 
     this._isAlright = null;
   }
@@ -200,6 +203,20 @@ export default class Example extends React.Component {
     }
     return null;
   }
+  renderComposer(props) {
+    return (
+      <Composer
+        {...props}
+      />
+    );
+  }
+  renderInputToolbar(props) {
+    return (
+      <InputToolbar
+        {...props}
+      />
+    );
+  }
 
   render() {
     return (
@@ -219,6 +236,10 @@ export default class Example extends React.Component {
         renderSystemMessage={this.renderSystemMessage}
         renderCustomView={this.renderCustomView}
         renderFooter={this.renderFooter}
+
+        // Config 
+        renderComposer={this.renderComposer}
+        renderInputToolbar = {this.renderInputToolbar}
       />
     );
   }
